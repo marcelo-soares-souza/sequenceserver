@@ -243,6 +243,15 @@ Total letters in queried databases: <%= report.stats[:ncharacters] %>
           <li>
             <a
               class="download"
+              title="17 columns result"
+              data-toggle="tooltip"
+              href="download/<%= report.search_id %>.custom_tsv">
+              Custom tabular report
+            </a>
+          </li>
+          <li>
+            <a
+              class="download"
               title="Results in XML format."
               data-toggle="tooltip"
               href="download/<%= report.search_id %>.xml">

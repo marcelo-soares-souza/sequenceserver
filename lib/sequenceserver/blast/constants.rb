@@ -15,6 +15,11 @@ module SequenceServer
                            qframe hframe btop staxids sscinames scomnames
                            sblastnames sskingdoms stitle salltitles sstrand
                            qcovs qcovhsp).join(' ')
+
+    OUTFMT_CUSTOM_SPECIFIERS = %w(qseqid qlen sseqid slen qstart qend sstart send
+                                  evalue bitscore length pident nident positive
+                                  qcovs qcovhsp sseq).join(' ')
+
     OUTFMT = {
       'pairwise'        => [0, :txt],
       'qa'              => [1, :txt],
@@ -27,7 +32,8 @@ module SequenceServer
       'asn_text'        => [8, :asn],
       'asn_binary'      => [9, :asn],
       'csv'             => [10, :csv],
-      'archive'         => [11, :txt]
+      'archive'         => [11, :txt],
+      'custom_tsv'      => [7, :tsv, OUTFMT_CUSTOM_SPECIFIERS],
     }
   end
 end
